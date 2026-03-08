@@ -1,0 +1,31 @@
+En este proyecto se vio como funciona DTO y su importancia
+por ejemplo el no mandar mas de una clase si no
+mandar una clase con la fusion de mas de 1 clase por ejemplo
+
+Clase Usuario, Clase Propiedad y Clase Banco
+Se realiza una clase Fusion o Usuario DTO en donde
+solo apareceran los datos fundamentales de
+Usuario, Propiedad y Banco regresando un
+solo objeto simplificando tareas al FrontEnd.
+===================================================================
+Por otra parte en este proyecto se realizo la forma de organizar
+los paquetes y clases en esta, en donde
+dividiremos todo para tener una buena organización por ejemplo
+
+1.Fundamentalmente tenemos el paquete del main, con el inicializador del
+    servidor.
+
+2.El paquete Controller sirve para agregar las clases que manejaran
+    los metodos HTTP ya sean GET, POST, PUT, DELETE, etc. En este paquete
+    solo se manejaran funciones HTTP.
+
+3.DTOs: En este paquete se manejaran las clases que contienen fusiones de clases
+    es utili para especificar que es una Clase normal y una DTO.
+4.Entity: En este paquete se crearan las clases "normales", en donde
+    pueden ser clases basicas o clases relacionadas a alguna base de datos usando
+    algun JPA
+5.Repository_DAO: En este paquete se guardaran las clases que realizaran las
+    funcionalidades o llamados a base de datos usando algun JPA.
+6.Services: En este paquete se guardaran las funcionalidades que no dependen de algun
+    proveedor ya se auna base de datos, aqui estaran las funcionalidades
+    fundamentales de la aplicación.
