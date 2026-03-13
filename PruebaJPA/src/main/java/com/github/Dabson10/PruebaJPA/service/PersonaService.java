@@ -2,7 +2,6 @@ package com.github.Dabson10.PruebaJPA.service;
 
 import com.github.Dabson10.PruebaJPA.entity.Persona;
 import com.github.Dabson10.PruebaJPA.repository.InPersonaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,4 +48,11 @@ public class PersonaService implements InPersonaService{
         per.setEdad(nuevaEdad);
         persoRepo.save(per);
     }
+
+    @Override
+    public void editPersona2(Persona persona){
+        persoRepo.save(persona);
+    }
+
+
 }

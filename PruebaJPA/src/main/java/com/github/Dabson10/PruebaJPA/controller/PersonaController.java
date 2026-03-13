@@ -1,5 +1,6 @@
 package com.github.Dabson10.PruebaJPA.controller;
 
+import com.github.Dabson10.PruebaJPA.entity.Mascota;
 import com.github.Dabson10.PruebaJPA.entity.Persona;
 import com.github.Dabson10.PruebaJPA.service.InPersonaService;
 import org.springframework.web.bind.annotation.*;
@@ -38,9 +39,20 @@ public class PersonaController {
                                @RequestParam(required = false, name = "id") Long newID,
                                @RequestParam(required = false, name = "nombre") String nuevoNombre,
                                @RequestParam(required = false, name = "apellido") String nuevoApellido,
-                               @RequestParam(required = false, name = "edad") int nuevaEdad
+                               @RequestParam(required = false, name = "edad") int nuevaEdad,
+                               @RequestBody Mascota mascota
                                ){
         perServi.editPersona(id, newID,nuevoNombre, nuevoApellido, nuevaEdad);
         return perServi.getPersona(newID);
     }
+
+    @PutMapping("/persona/editar")
+    public Persona editPersona2(
+            @RequestBody Persona persona
+    ){
+        perServi.editPersona2(persona);
+
+        return perServi.getPersona(persona.getId());
+    }
+
 }

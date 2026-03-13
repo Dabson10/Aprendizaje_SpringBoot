@@ -15,4 +15,6 @@ public interface InPersonaService {
     public Persona getPersona(Long id);
     //Editar usuarios
     public void editPersona(Long id, Long newID,String nuevoNombre, String nuevoApellido, int nuevaEdad);
+
+    public void editPersona2(Persona persona);
 }
