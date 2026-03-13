@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -17,17 +19,18 @@ public class Persona {
     private String nombre;
     private String apellido;
     private int edad;
-    @OneToOne
-    @JoinColumn(name = "mascota_id_mascota", referencedColumnName = "id_mascota")
-    private Mascota mascota;
+    @OneToMany
+    private List<Mascota> mascotas;
 
     public Persona(){}
 
-    public Persona(Long id, String nombre, String apellido, int edad, Mascota mascota) {
+    public Persona(Long id, String nombre,
+                   String apellido, int edad,
+                   List<Mascota> mascotas) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
-        this.mascota = mascota;
+        this.mascotas = mascotas;
     }
 }

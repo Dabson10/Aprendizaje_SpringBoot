@@ -16,6 +16,11 @@ public class Mascota {
     private String raza;
     private String color;
 
+
+    //Relacion bidireccional.
+//    @ManyToOne
+//    Persona dueño;
+
     public Mascota(){}
 
     public Mascota(Long id_mascota, String nombre, String especie, String raza, String color) {
