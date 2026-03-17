@@ -1,11 +1,13 @@
 package org.github.dabson10.cursojpa.controller;
 
+import org.github.dabson10.cursojpa.DTOs.CursoDTO;
 import org.github.dabson10.cursojpa.entity.Curso;
 import org.github.dabson10.cursojpa.entity.Tema;
 import org.github.dabson10.cursojpa.services.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,13 +23,31 @@ public class CursoController {
     @PostMapping("/crear")
     public String createCurso(
             @RequestBody Curso curso){
-        cruse.createCurso(curso);
+
         if(curso.getTemas() != null){
             for(Tema tema : curso.getTemas()){
                 tema.setCurso(curso);
             }
         }
+        cruse.createCurso(curso);
         return "Curso creado";
+    }
+    @PostMapping("/crear/varios")
+    public void createCursos(
+            @RequestBody List<Curso> curso){
+
+        for(Curso cur : curso){
+            if(cur.getTemas() != null){
+                for(Tema tema : cur.getTemas()){
+                    tema.setCurso(cur);
+                }
+                cruse.createCurso(cur);
+                System.out.println("Curso creado");
+            }else{
+                cruse.createCurso(cur);
+            }
+
+        }
     }
 
     //Metodos de lectura de datos.
@@ -41,6 +61,26 @@ public class CursoController {
             @RequestParam Long id
     ){
         return cruse.getCurso(id);
+    }
+
+    //Filtro en la busqueda. // Traerá todos lo que contengan de nombre "java"
+    @GetMapping("/filtro")
+    public List<CursoDTO> getCursoJava(){
+        List<Curso> list = cruse.getCursos();
+        List<CursoDTO> listFiltro = new ArrayList<>();
+
+        for(Curso curso : list){
+            if(curso.getNombre().toLowerCase().contains("java")){
+                 listFiltro.add(new CursoDTO(
+                         curso.getId_curso(),
+                         curso.getNombre(),
+                         curso.getModalidad(),
+                         curso.getFecha_Finalizacion()
+                 ));
+             }
+        }
+
+        return listFiltro;
     }
 
     //Metodos para actualizar

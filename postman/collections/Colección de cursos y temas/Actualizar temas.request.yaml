@@ -1,0 +1,18 @@
+$kind: http-request
+name: Actualizar temas
+url: localhost:8080/tema/edit
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"id_tema\" : 1,\r
+
+    \    \"nombre\" : \"Fundamentos de OOP\",\r
+
+    \    \"descripcion\" : \"Java OOP\" ,\r
+
+    \    \"curso\" : 1\r
+
+    }"
+order: 4202449322652804

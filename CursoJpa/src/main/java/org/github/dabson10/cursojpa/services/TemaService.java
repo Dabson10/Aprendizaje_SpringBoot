@@ -1,5 +1,7 @@
 package org.github.dabson10.cursojpa.services;
 
+import org.github.dabson10.cursojpa.DTOs.TemaDTO;
+import org.github.dabson10.cursojpa.entity.Curso;
 import org.github.dabson10.cursojpa.entity.Tema;
 import org.github.dabson10.cursojpa.repository.InTemaRepository;
 import org.springframework.stereotype.Service;
@@ -10,9 +12,11 @@ import java.util.List;
 public class TemaService implements InTemaService{
 
     final InTemaRepository temaRep;
+    final CursoService curSe;
 
-    public TemaService(InTemaRepository temaRep){
+    public TemaService(InTemaRepository temaRep, CursoService curSe){
         this.temaRep = temaRep;
+        this.curSe = curSe;
     }
 
     @Override
@@ -31,8 +35,18 @@ public class TemaService implements InTemaService{
     }
 
     @Override
-    public void updateTema(Tema tema) {
-        temaRep.save(tema);
+    public void updateTema(TemaDTO tema) {
+
+        Tema tem = this.getTema(tema.getId_tema());
+        Curso cur = curSe.getCurso(tema.getId_tema());
+
+        tem.setNombre(tema.getNombre());
+        tem.setDescripcion(tema.getDescripcion());
+        tem.setCurso(cur);
+
+
+
+        temaRep.save(tem);
     }
 
     @Override

@@ -1,0 +1,121 @@
+$kind: http-request
+name: Crear Varios
+url: localhost:8080/curso/crear/varios
+method: POST
+body:
+  type: json
+  content: "[\r
+
+    \    {\r
+
+    \        \"nombre\": \"Java Web\",\r
+
+    \        \"modalidad\": \"Programación\",\r
+
+    \        \"fecha_Finalizacion\": \"2025-01-22\",\r
+
+    \        \"temas\": [\r
+
+    \            {\r
+
+    \                \"nombre\": \"Java Sintaxis\",\r
+
+    \                \"descripcion\": \"Funcionamiento de java.\"\r
+
+    \            }\r
+
+    \        ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"nombre\": \"Aprendiendo Java\",\r
+
+    \        \"modalidad\": \"Virtual\",\r
+
+    \        \"fecha_Finalizacion\": \"2025-03-15\",\r
+
+    \        \"temas\": [\r
+
+    \            {\r
+
+    \                \"nombre\": \"Conceptos básicos\",\r
+
+    \                \"descripcion\": \"Introducción a la programación con
+    Java.\"\r
+
+    \            }\r
+
+    \        ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"nombre\": \"Java Avanzado\",\r
+
+    \        \"modalidad\": \"Presencial\",\r
+
+    \        \"fecha_Finalizacion\": \"2025-05-10\",\r
+
+    \        \"temas\": [\r
+
+    \            {\r
+
+    \                \"nombre\": \"Multihilo y concurrencia\",\r
+
+    \                \"descripcion\": \"Manejo de hilos en Java.\"\r
+
+    \            }\r
+
+    \        ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"nombre\": \"Bases de Datos\",\r
+
+    \        \"modalidad\": \"Virtual\",\r
+
+    \        \"fecha_Finalizacion\": \"2025-02-28\",\r
+
+    \        \"temas\": [\r
+
+    \            {\r
+
+    \                \"nombre\": \"SQL básico\",\r
+
+    \                \"descripcion\": \"Consultas simples.\"\r
+
+    \            }\r
+
+    \        ]\r
+
+    \    },\r
+
+    \    {\r
+
+    \        \"nombre\": \"Estructuras de Datos\",\r
+
+    \        \"modalidad\": \"Presencial\",\r
+
+    \        \"fecha_Finalizacion\": \"2025-04-05\",\r
+
+    \        \"temas\": [\r
+
+    \            {\r
+
+    \                \"nombre\": \"Listas y árboles\",\r
+
+    \                \"descripcion\": \"Implementación en Java.\"\r
+
+    \            }\r
+
+    \        ]\r
+
+    \    }\r
+
+    ]"
+order: 1773459478402

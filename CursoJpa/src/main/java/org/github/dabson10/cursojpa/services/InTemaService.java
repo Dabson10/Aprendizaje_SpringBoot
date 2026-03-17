@@ -1,7 +1,7 @@
 package org.github.dabson10.cursojpa.services;
 
+import org.github.dabson10.cursojpa.DTOs.TemaDTO;
 import org.github.dabson10.cursojpa.entity.Tema;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public interface InTemaService{
     public List<Tema> getTemas();
     public Tema getTema(Long id);
 
-    public void updateTema(Tema tema);
+    public void updateTema(TemaDTO tema);
 
     public void deleteTema(Long id);
 }

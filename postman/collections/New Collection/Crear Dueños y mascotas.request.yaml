@@ -1,0 +1,54 @@
+$kind: http-request
+name: Crear Dueños y mascotas
+url: localhost:8080/dueno/crear
+method: POST
+body:
+  type: json
+  content: "// {\r
+
+    //     \"dni\" : \"123456789\",\r
+
+    //     \"nombre\" : \"Juan David\",\r
+
+    //     \"apellido\" : \"Almaraz\",\r
+
+    //     \"celular\" : \"5540641079\",\r
+
+    //     \"mascota\" : {\r
+
+    //         \"nombre\" : \"Goyo\",\r
+
+    //         \"especie\" : \"Perro\",\r
+
+    //         \"raza\" : \"Chihuahua\",\r
+
+    //         \"color\" : \"Cafe\" \r
+
+    //     }\r
+
+    // }\r
+
+    {\r
+
+    \    \"dni\" : \"234567890\",\r
+
+    \    \"nombre\" : \"Kevin\",\r
+
+    \    \"apellido\" : \"Almaraz Gonzalez\",\r
+
+    \    \"celular\" : \"789456123\",\r
+
+    \    \"mascota\" : {\r
+
+    \        \"nombre\" : \"Goyo\",\r
+
+    \        \"especie\" : \"Perro\",\r
+
+    \        \"raza\" : \"Chihuahua\",\r
+
+    \        \"color\" : \"Cafe\" \r
+
+    \    }\r
+
+    }"
+order: 1773715436847

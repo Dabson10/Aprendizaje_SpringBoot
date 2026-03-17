@@ -1,6 +1,7 @@
 package org.github.dabson10.cursojpa.services;
 
 import org.github.dabson10.cursojpa.entity.Curso;
+import org.github.dabson10.cursojpa.entity.Tema;
 import org.github.dabson10.cursojpa.repository.InCursoRepository;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,12 @@ public class CursoService implements InCursoService{
 
     @Override
     public void updateCurso(Curso curso) {
-        curRepo.save(curso);
+        Curso cur = this.getCurso(curso.getId_curso());
+        cur.setNombre(curso.getNombre());
+        cur.setModalidad(curso.getModalidad());
+        cur.setFecha_Finalizacion(curso.getFecha_Finalizacion());
+
+        curRepo.save(cur);
     }
 
     @Override

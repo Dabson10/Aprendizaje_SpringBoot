@@ -1,0 +1,20 @@
+$kind: http-request
+name: Actualizar cursos
+url: localhost:8080/curso/actualizar
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"id_curso\" : 1,\r
+
+    \    \"nombre\" : \"Programación 2\",\r
+
+    \    \"modalidad\" : \"Fisico\",\r
+
+    \    \"fecha_Finalizacion\" : \"2026-04-26\",\r
+
+    \    \"temas\" : {}\r
+
+    }"
+order: 954029809175377
