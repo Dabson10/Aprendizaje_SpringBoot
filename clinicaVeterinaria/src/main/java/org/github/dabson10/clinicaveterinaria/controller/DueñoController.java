@@ -1,8 +1,10 @@
 package org.github.dabson10.clinicaveterinaria.controller;
 
 import org.github.dabson10.clinicaveterinaria.DTOs.DueñoDTO;
+import org.github.dabson10.clinicaveterinaria.DTOs.MascotaDueñoDTO;
 import org.github.dabson10.clinicaveterinaria.entity.Dueño;
 import org.github.dabson10.clinicaveterinaria.service.DueñoService;
+import org.github.dabson10.clinicaveterinaria.service.Mascota_DueñoDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +14,10 @@ import java.util.List;
 public class DueñoController {
 
     final DueñoService dueSe;
-
-    public DueñoController(DueñoService dueSe){
+    final Mascota_DueñoDTO masDe;
+    public DueñoController(DueñoService dueSe, Mascota_DueñoDTO masDe){
         this.dueSe = dueSe;
+        this.masDe = masDe;
     }
 
     //Crear
@@ -27,10 +30,10 @@ public class DueñoController {
 
     //Lectura
     @GetMapping("/traer")
-    public Dueño getDueño(
+    public DueñoDTO getDueño(
             @RequestParam Long id
     ){
-        return dueSe.getDueño(id);
+        return dueSe.getDueñoDTO(id);
     }
 
     @GetMapping("/traer/todos")
@@ -38,6 +41,12 @@ public class DueñoController {
         return dueSe.getDueños();
     }
 
+    @GetMapping("/datos/paciente")
+    public MascotaDueñoDTO getDatosDTO(
+            @RequestParam Long id
+    ){
+        return masDe.getDatos(id);
+    }
     //Editar
     @PutMapping("/editar")
     public void editDueño(
@@ -46,4 +55,10 @@ public class DueñoController {
      dueSe.editDueño(dueño);
     }
 
+    @DeleteMapping("/borrar")
+    public void delete(
+            @RequestParam Long id
+    ){
+        dueSe.deletDueño(id);
+    }
 }

@@ -9,6 +9,7 @@ public interface InDueñoService {
     public void createDueño(Dueño dueño);
 
     public Dueño getDueño(Long id);
+    public DueñoDTO getDueñoDTO(Long id);
     public List<DueñoDTO> getDueños();
 
     public void editDueño(DueñoDTO dueño);
